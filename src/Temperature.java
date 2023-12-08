@@ -23,14 +23,12 @@ public class Temperature
     // 1. Add your two static methods here:
     public static double convertCtoF(double temp)
     {
-        double temperatureF = (temp * (9 / 5)) + 32;
-        return temperatureF;
+        return(((temp * 9) / 5) + 32);
     }
 
     public static double convertFtoC(double temp)
     {
-        double temperatureC = (temp - 32) * (5 / 9);
-        return temperatureC;
+        return(((temp - 32) * 5) / 9);
     }
 
 
@@ -56,7 +54,10 @@ public class Temperature
     }
 
     // 3. Add your private static helper rounding "utility" method here:
-
+    public static double roundToNearestTenth(double num)
+    {
+        return(Math.round(num * 10.0) / 10.0);
+    }
 
     // 4. Complete the toString method below (using your static helper method)
     //    so it returns a String that prints like:
@@ -66,6 +67,6 @@ public class Temperature
 
     public String toString()
     {
-
+        return("High Temperature: " + roundToNearestTenth(highTemp) + " " + tempScale + "\nLow Temperature: " + roundToNearestTenth(lowTemp) + " " + tempScale);
     }
 }
