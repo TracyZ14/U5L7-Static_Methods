@@ -2,12 +2,12 @@ public class RaceUtility
 {
     public static double milesToKm(double miles)
     {
-        return(miles * 1.6);
+        return(miles * 1.609344);
     }
 
     public static double kmToMiles(double km)
     {
-        return(km / 1.6);
+        return(km / 1.609344006);
     }
 
     public static String makeProper(String sentence)
@@ -20,22 +20,22 @@ public class RaceUtility
             boolean isAfterSpace = false;
             if(i == 0)
             {
-                properSentence = character;
+                properSentence = character.toUpperCase();
             }
             else
             {
-                if(String.valueOf(sentenceLowerCase.charAt(i - 1)).equals(" "))
+                if (String.valueOf(sentenceLowerCase.charAt(i - 1)).equals(" "))
                 {
                     isAfterSpace = true;
                 }
-            }
-            if(!isAfterSpace)
-            {
-                properSentence = properSentence + character;
-            }
-            if(isAfterSpace)
-            {
-                properSentence = properSentence + character.toUpperCase();
+                if (!isAfterSpace)
+                {
+                    properSentence = properSentence + character;
+                }
+                if (isAfterSpace)
+                {
+                    properSentence = properSentence + character.toUpperCase();
+                }
             }
         }
         return properSentence;
